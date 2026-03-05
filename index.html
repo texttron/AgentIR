@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="AgentIR: Reasoning-Aware Retrieval for Deep Research Agents">
+    <meta property="og:title" content="AgentIR: Reasoning-Aware Retrieval for Deep Research Agents" />
+    <meta property="og:description" content="AgentIR introduces Reasoning-Aware Retrieval and DR-Synth to exploit agentic reasoning traces for superior retrieval performance in Deep-Research." />
+    <meta property="og:url" content="https://texttron.github.io/AgentIR/" />
+    <meta property="og:image" content="static/images/teaser.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <title>AgentIR: Reasoning-Aware Retrieval for Deep Research Agents</title>
+    <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
+    <link rel="alternate icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body" style="padding-bottom: 0;">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">
+                            AgentIR: Reasoning-Aware Retrieval<br>for Deep Research Agents
+                        </h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Zijian Chen<sup>1</sup></span>,
+                            <span class="author-block">Xueguang Ma<sup>1</sup></span>,
+                            <span class="author-block">Shengyao Zhuang<sup>2</sup></span>,
+                            <span class="author-block">Jimmy Lin<sup>1</sup></span>,
+                            <span class="author-block">Akari Asai<sup>3</sup></span>,
+                            <span class="author-block">Victor Zhong<sup>1</sup></span>
+                        </div>
+
+                        <div class="column has-text-centered" style="margin-top: 0rem; margin-bottom: 0rem;">
+                            <div class="publication-links" style="display: inline-flex; gap: 1.25rem; flex-wrap: wrap;">
+                                <span class="link-block">
+                                    <a href="https://github.com/texttron/AgentIR" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon"><i class="fab fa-github"></i></span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="AgentIR.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon"><i class="ai ai-arxiv"></i></span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://huggingface.co/datasets/texttron/AgentIR" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">🤗</span>
+                                        <span>Dataset</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="is-size-5 publication-authors" style="margin-top: 0rem;">
+                            <span class="author-block"><small><sup>1</sup>University of Waterloo, </small></span>
+                            <span class="author-block"><small><sup>2</sup>University of Queensland, </small></span>
+                            <span class="author-block"><small><sup>3</sup>Carnegie Mellon University</small></span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors" style="margin-top: 0rem; margin-bottom: 1.5rem;">
+                            <span class="author-block"><small><i class="far fa-envelope"></i> Correspondence: s42chen@uwaterloo.ca</small></span>
+                        </div>
+
+                        
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract -->
+    <section class="section has-background-light" style="padding-top: 3rem; padding-bottom: 3rem;">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h1 class="title is-3">Abstract</h1>
+                </div>
+                    </div>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths content has-text-justified">
+                    <p><strong>Deep Research</strong> agents are rapidly emerging as primary consumers of modern retrieval systems. Unlike human users who issue and refine queries without documenting their intermediate thought processes, Deep Research agents generate explicit natural language reasoning before each search call, revealing rich intent and contextual information that existing retrievers entirely ignore. To exploit this overlooked signal, we introduce: (1) <strong>Reasoning-Aware Retrieval</strong>, a retrieval paradigm that jointly embeds the agent's reasoning trace alongside its query; and (2) <strong>DR-Synth</strong>, a data synthesis method that generates Deep Research retriever training data from standard QA datasets. We demonstrate that both components are independently effective, and their combination yields a trained embedding model, AgentIR-4B, with substantial gains. On the challenging BrowseComp-Plus benchmark, AgentIR-4B achieves 68% accuracy with the open-weight agent Tongyi-DeepResearch, compared to 50% with conventional embedding models twice its size, and 37% with BM25.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Figure (optional) -->
+    <section class="hero is-small" style="margin-top: 0;">
+        <div class="hero-body" style="padding-top: 1.5rem; padding-bottom: 3rem;">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <div class="item">
+                            <img src="static/images/teaser.png" alt="Teaser" />
+                            <p class="has-text-centered" style="font-size: 0.95rem; font-style: italic; margin-top: 0.5rem;">
+                                Reasoning-Aware Retrieval (AgentIR-4B) vs. conventional retrieval (Qwen3-Embedding-4B) for a task from BrowseComp-Plus, paired with the Tongyi-DR agent. The task has been simplified for display.<br/>
+                                <strong>AgentIR-4B achieves 68% end-to-end accuracy, compared to 50% for a strong conventional embedding model double its size, and 37% for BM25.</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+    
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h1 class="title is-3">Methodology</h1>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths content has-text-justified">
+                    <h3 class="title is-4">Reasoning-Aware Retrieval</h3>
+                    <p>
+                        Conventional retrieval underutilizes the structure of Deep Research agents. Unlike human users, Deep Research agents explicitly expose the reasoning traces that motivate their search queries. We propose Reasoning-Aware Retrieval, a paradigm that jointly embeds the reasoning trace alongside the query, learning a retriever that leverages the rich intent and contextual information expressed in agent reasoning.
+                    </p>
+                    <h3 class="title is-4">DR-Synth</h3>
+                    <p>
+                        To address the lack of retriever training data for agent-issued sub-queries, we introduce DR-Synth, a data synthesis pipeline that generates sub-query level retriever training data from standard QA datasets by leveraging agent rollouts and an oracle reranking procedure.
+                    </p>
+                    <div class="has-text-centered" style="margin-bottom: 1rem;">
+                        <img src="static/images/positive_collection.png" alt="DR-Synth Overview" />
+                        <p style="font-size: 0.95rem; font-style: italic; margin-top: 0.5rem;">Oracle reranking procedure used in DR-Synth to construct (agent sub-query, relevance) pairs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section has-background-light">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h1 class="title is-3">Results</h1>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths content has-text-justified">
+                    <div class="content" style="margin-bottom: 1rem;">
+                        <div id="results-table-container" class="table-container">
+                            <table id="results-table" class="table is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 15%; text-align: center;">LLM</th>
+                                        <th style="width: 25%; text-align: center;">Retriever</th>
+                                        <th style="width: 20%; text-align: center;">Accuracy</th>
+                                        <th style="width: 20%; text-align: center;">Recall</th>
+                                        <th style="width: 20%; text-align: center;">Search Calls</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <p id="results-table-caption" class="has-text-centered" style="font-size: 0.95rem; font-style: italic; margin-top: 0.5rem;">End-to-end agent accuracy on BrowseComp-Plus across LLMs and retrievers</p>
+                        <p id="results-table-note" class="has-text-centered" style="display:none; font-size: 0.9rem; color: #666;">Table data will be posted soon.</p>
+                    </div>
+                    <h3 class="title is-4">Main Results</h3>
+                    <p>
+                        Table 1 reports end-to-end Deep Research results on BrowseComp-Plus. AgentIR-4B achieves the best performance across all agents, substantially outperforming all prior baselines and competitive concurrent work. For Tongyi-DR, AgentIR-4B achieves 66.27% accuracy, a 17.60% absolute improvement over the Qwen3-Embed-4B backbone.
+                    </p>
+                    <h3 class="title is-4">Effectiveness of Reasoning-Aware Retrieval and DR-Synth</h3>
+                    <p>
+                        Both components are independently effective, and their combination delivers the largest gains. On Tongyi-DR, jointly embedding the agent reasoning without any finetuning improves accuracy from 48.67% to 55.54%. Training the retriever without using reasonings achieves 59.4%, and when combined with reasonings, accuracy further increases to 66.27%.
+                    </p>
+                    <h3 class="title is-4">Redundancy in Past Reasonings</h3>
+                    <div class="has-text-centered" style="margin-bottom: 1rem;">
+                        <img src="static/images/reasoning_effort.png" alt="Impact of reasoning history" />
+                    </div>
+                    <p>
+                        Incorporating the full history of prior reasonings does not improve over using just the current turn's reasoning. This is partly due to the repetition between reasonings across turns: the current reasoning often summarizes findings from prior turns. Additionally, earlier reasonings may introduce noise through incorrect hypotheses that were later resolved.
+                    </p>
+                    <h3 class="title is-4">Ablation over Trajectory Variants</h3>
+                    <div class="content" style="margin-bottom: 1rem;">
+                        <div id="retriever-table-container" class="table-container">
+                            <table id="retriever-table" class="table is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%; text-align: center;">Agent</th>
+                                        <th style="width: 45%; text-align: center;">Method</th>
+                                        <th style="width: 10%; text-align: center;">Acc.</th>
+                                        <th style="width: 10%; text-align: center;">Recall</th>
+                                        <th style="width: 10%; text-align: center;">Calls</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="retriever-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p>
+                        We evaluate different ways to transform the agent trajectory into retriever input. AgentIR-4B (using current reasoning) outperforms other variants including using prior queries or global questions, confirming that reasoning traces provide a distinct and valuable retrieval signal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+    <!-- Citation (final section) -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths content">
+                    <h2 class="title is-3">Citation</h2>
+                    <p>If you find this work useful, please cite:</p>
+                    <pre>
+@article{chen2026AgentIR,
+    title={AgentIR: Reasoning-Aware Retrieval for Deep Research Agents}, 
+    author={Chen, Zijian and Ma, Xueguang and Zhuang, Shengyao and Lin, Jimmy and Akari Asai and Victor Zhong},
+    year={2026},
+    journal={arXiv preprint}
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="static/js/jquery-3.5.1.js"></script>
+    <script src="static/js/jquery.dataTables.js"></script>
+    <script>
+        (function initResultsTable() {
+            const tableElement = document.getElementById('results-table');
+            if (!tableElement) return;
+
+            // Fallback data mirroring the LaTeX table. Each row: [LLM, Retriever, Accuracy, Recall, Search Calls, Calibration Error]
+            const fallbackData = [
+                ['Tongyi-DR','BM25','33.98%','46.83%','32.92'],
+                ['Tongyi-DR','Qwen3-Embed-4B','48.67%','59.90%','31.02'],
+                ['Tongyi-DR','Qwen3-Embed-8B','50.72%','61.78%','30.43'],
+                ['Tongyi-DR','ReasonIR-8B','51.03%','63.62%','31.15'],
+                ['Tongyi-DR','Agentic-R','44.70%','47.67%','31.05'],
+                ['Tongyi-DR','AgentIR-4B','66.27%','78.86%','25.91'],
+                ['oss-120b','BM25','36.02%','43.32%','31.00'],
+                ['oss-120b','Qwen3-Embed-4B','47.59%','58.15%','29.14'],
+                ['oss-120b','Qwen3-Embed-8B','49.52%','60.70%','28.74'],
+                ['oss-120b','ReasonIR-8B','50.84%','60.71%','29.03'],
+                ['oss-120b','Agentic-R','45.66%','46.42%','28.53'],
+                ['oss-120b','AgentIR-4B','66.99%','78.13%','24.08'],
+                ['GLM-4.7','BM25','33.25%','45.97%','41.55'],
+                ['GLM-4.7','Qwen3-Embed-4B','50.48%','66.05%','35.38'],
+                ['GLM-4.7','Qwen3-Embed-8B','50.18%','68.69%','35.32'],
+                ['GLM-4.7','ReasonIR-8B','52.27%','68.22%','35.94'],
+                ['GLM-4.7','Agentic-R','46.75%','52.09%','35.20'],
+                ['GLM-4.7','AgentIR-4B','64.66%','79.21%','29.85'],
+            ];
+
+            function populate(rows) {
+                const tbody = tableElement.querySelector('tbody');
+                tbody.innerHTML = '';
+
+                // Group rows by LLM preserving order
+                const groups = [];
+                for (const r of rows) {
+                    const [llm] = r;
+                    const last = groups[groups.length - 1];
+                    if (!last || last.llm !== llm) {
+                        groups.push({ llm, rows: [r] });
+                    } else {
+                        last.rows.push(r);
+                    }
+                }
+
+                for (const g of groups) {
+                    const rowspan = g.rows.length;
+                    g.rows.forEach((r, idx) => {
+                        const tr = document.createElement('tr');
+                        if (idx === 0) tr.classList.add('group-start');
+                        const [llm, retriever, acc, rec, calls] = r;
+
+                        if (idx === 0) {
+                            const llmTd = document.createElement('td');
+                            llmTd.className = 'llm-cell';
+                            llmTd.setAttribute('rowspan', String(rowspan));
+                            llmTd.textContent = llm;
+                            tr.appendChild(llmTd);
+                        }
+
+                        const cells = [retriever, acc, rec, calls];
+                        for (const cell of cells) {
+                            const td = document.createElement('td');
+                            td.textContent = cell;
+                            tr.appendChild(td);
+                        }
+                        tbody.appendChild(tr);
+                    });
+                }
+                
+                // Don't initialize DataTables to avoid conflicts with rowspan
+            }
+
+            // Directly populate with built-in data (no CSV fetch)
+            populate(fallbackData);
+        })();
+
+        // Initialize retriever table
+        (function initRetrieverTable() {
+            const tableBody = document.getElementById('retriever-table-body');
+            if (!tableBody) return;
+
+            const groupData = [
+                {
+                    agent: 'Tongyi-DR',
+                    rows: [
+                        ['None', '59.40%', '70.02%', '27.97'],
+                        ['Current Reasoning (AgentIR-4B)', '66.27%', '78.86%', '25.91'],
+                        ['Global Question', '63.25%', '70.98%', '26.90'],
+                        ['Prior Queries', '63.13%', '71.55%', '27.12'],
+                        ['Prior Queries & Reasonings', '63.13%', '74.20%', '26.48'],
+                    ]
+                },
+                {
+                    agent: 'oss-120b',
+                    rows: [
+                        ['None', '59.16%', '68.80%', '26.64'],
+                        ['Current Reasoning (AgentIR-4B)', '66.99%', '78.13%', '24.08'],
+                        ['Global Question', '61.93%', '70.10%', '25.66'],
+                        ['Prior Queries', '61.89%', '71.53%', '25.41'],
+                        ['Prior Queries & Reasonings', '64.34%', '73.32%', '24.46'],
+                    ]
+                }
+            ];
+
+            for (const g of groupData) {
+                const rowspan = g.rows.length;
+                g.rows.forEach((r, idx) => {
+                    const tr = document.createElement('tr');
+                    
+                    if (idx === 0) {
+                        const agentTd = document.createElement('td');
+                        agentTd.className = 'llm-cell';
+                        agentTd.setAttribute('rowspan', String(rowspan));
+                        agentTd.textContent = g.agent;
+                        tr.appendChild(agentTd);
+                    }
+
+                    for (const cell of r) {
+                        const td = document.createElement('td');
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    }
+                    tableBody.appendChild(tr);
+                });
+            }
+        })();
+    </script>
+
+</body>
+</html>
