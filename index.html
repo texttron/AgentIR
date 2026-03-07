@@ -92,7 +92,7 @@
                     </div>
             <div class="columns is-centered">
                 <div class="column is-four-fifths content has-text-justified">
-                    <p><strong>Deep Research</strong> agents are rapidly emerging as primary consumers of modern retrieval systems. Unlike human users who issue and refine queries without documenting their intermediate thought processes, Deep Research agents generate explicit natural language reasoning before each search call, revealing rich intent and contextual information that existing retrievers entirely ignore. To exploit this overlooked signal, we introduce: (1) <strong>Reasoning-Aware Retrieval</strong>, a retrieval paradigm that jointly embeds the agent's reasoning trace alongside its query; and (2) <strong>DR-Synth</strong>, a data synthesis method that generates Deep Research retriever training data from standard QA datasets. We demonstrate that both components are independently effective, and their combination yields a trained embedding model, AgentIR-4B, with substantial gains. On the challenging BrowseComp-Plus benchmark, AgentIR-4B achieves 68% accuracy with the open-weight agent Tongyi-DeepResearch, compared to 50% with conventional embedding models twice its size, and 37% with BM25.</p>
+                    <p>Deep Research agents are rapidly emerging as primary consumers of modern retrieval systems. Unlike human users who issue and refine queries without documenting their intermediate thought processes, Deep Research agents generate explicit natural language reasoning before each search call, revealing rich intent and contextual information that existing retrievers entirely ignore. To exploit this overlooked signal, we introduce: (1) <strong>Reasoning-Aware Retrieval</strong>, a retrieval paradigm that jointly embeds the agent's reasoning trace alongside its query; and (2) <strong>DR-Synth</strong>, a data synthesis method that generates Deep Research retriever training data from standard QA datasets. We demonstrate that both components are independently effective, and their combination yields a trained embedding model, <strong>AgentIR-4B</strong>, with substantial gains. On the challenging BrowseComp-Plus benchmark, AgentIR-4B achieves 68% accuracy with the open-weight agent Tongyi-DeepResearch, compared to 50% with conventional embedding models twice its size, and 37% with BM25.</p>
                 </div>
             </div>
         </div>
@@ -138,7 +138,7 @@
                 <div class="column is-four-fifths">
                     <div class="item has-text-centered">
                         <img src="static/images/teaser.png" alt="Teaser for Reasoning-Aware Retrieval" style="margin-bottom: 0.5rem;" />
-                        <p class="has-text-centered" style="font-size: 0.95rem; font-style: italic; margin-bottom: 2rem;">Reasoning-Aware Retrieval (AgentIR-4B) vs. conventional retrieval (Qwen3-Embedding-4B) for a task from BrowseComp-Plus.</p>
+                        <p class="has-text-centered" style="font-size: 0.95rem; font-style: italic; margin-bottom: 2rem;">Conventional Retrieval (Qwen3-Embedding-4B) vs. Reasoning-Aware Retrieval (AgentIR-4B) for a task from BrowseComp-Plus.</p>
                     </div>
                     
                     <div class="content has-text-justified">
@@ -175,6 +175,11 @@
                         <p>
                             However, this poses a new challenge: existing datasets do not contain training data for the agent sub-queries that arise during Deep Research. Traditional training datasets provide instances of global questions Q's and their corresponding relevance judgements. However, in Deep Research, the agent observes the global Q and iteratively issues sub-queries; the retriever's task is to handle these sub-queries, not the global Q.
                         </p>
+                        
+                        <div class="has-text-centered" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                            <img src="static/images/dr-data.png" alt="Training data gap for Deep Research queries" style="max-width: 100%;" />
+                        </div>
+                        
                         <p>
                             To bridge this gap, we introduce <strong>DR-Synth</strong>, a pipeline that synthesizes sub-query level training data from traditional QA datasets.
                         </p>
