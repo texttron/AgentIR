@@ -4,15 +4,15 @@ This directory contains scaffolds for end-to-end Deep Research, for Tongyi-DeepR
 
 ## BrowseComp-Plus Setup
 
-To evaluate on [BrowseComp-Plus](https://github.com/texttron/BrowseComp-Plus), run:
+To download [BrowseComp-Plus](https://github.com/texttron/BrowseComp-Plus) data, run:
 ```
 python prepare_data.py
 ```
-which downloads the benchmark data into `data/` and `topics-qrels/`, with pre-built AgentIR-4B index in `indexes/`.
+which downloads the benchmark into `data/` and `topics-qrels/`, with pre-built AgentIR-4B index in `indexes/`.
 
 > To encode the corpus yourself using AgentIR-4B, please see `scripts/embed_bcp.sh`
 
-#### Tongyi-DeepResearch
+### Tongyi-DeepResearch
 
 To evaluate Tongyi-DeepResearch with AgentIR-4B, first host the agent:
 ```
@@ -34,7 +34,7 @@ where you may replace `{num_gpus}` with the number of GPUs you have available.
 
 **Note**: The Tongyi-DeepResearch model is trained to use a `visit` tool and issue parallel tool calls (multiple search calls at once). The script above enables these functions. For fair comparison against the official baselines in BrowseComp-Plus without these features, you can also run `bash scripts/run_tongyi_agentir_search-only.sh --port 6008 --num-threads 10`, which disables them.
 
-#### GPT-OSS
+### GPT-OSS
 
 We recommend creating a separate environment for GPT-OSS:
 ```
@@ -58,7 +58,7 @@ python evaluate_bcp.py --input_dir runs/agentir/oss_120b --tensor_parallel_size 
 
 You can also change the model name in `vllm` hosting and `scripts/run_oss_agentir.sh` to use `openai/gpt-oss-20b` instead of 120b.
 
-#### GLM
+### GLM
 
 Setting GLM api key:
 ```
