@@ -1,6 +1,6 @@
 # AgentIR
 
-| [📄Paper](https://arxiv.org/abs/2603.04384) | [🏠Project Page](https://texttron.github.io/AgentIR/) | [🤗Model](https://huggingface.co/Tevatron/AgentIR-4B) | [🤗Data](https://huggingface.co/datasets/Tevatron/AgentIR-data) |
+| [📄Paper](https://arxiv.org/abs/2603.04384) | [🤗Model](https://huggingface.co/Tevatron/AgentIR-4B) | [🤗Data](https://huggingface.co/datasets/Tevatron/AgentIR-data) | [🏠Project Page](https://texttron.github.io/AgentIR/) |
 
 AgentIR is a retriever specialized for Deep Research agents. Unlike conventional retrievers that proces queries unaware of the agent, AgentIR explicitly leverages the agent's reasoning trace by jointly embedding it alongside the query. 
 
