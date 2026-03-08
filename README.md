@@ -1,6 +1,5 @@
 # AgentIR
 
-<div align="center">
   <a href="https://arxiv.org/abs/2603.04384">
     <img src="https://img.shields.io/badge/Paper-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" alt="Paper">
   </a>
@@ -13,7 +12,6 @@
   <a href="https://texttron.github.io/AgentIR/">
   <img src="https://img.shields.io/badge/Project%20Page-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Project Page">
 </a>
-</div>
 
 <br>
 
