@@ -1,0 +1,12 @@
+__pycache__
+.env
+.venv
+evaluation/data/
+evaluation/indexes/
+evaluation/topics-qrels/
+evaluation/evals/
+evaluation/runs/
+*.egg-info/
+training/data
+training/models
+*tmp/
