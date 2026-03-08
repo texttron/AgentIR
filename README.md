@@ -9,12 +9,11 @@ AgentIR is a retriever specialized for Deep Research agents. Unlike conventional
 </p>
 
 
-When employed for end-to-end Deep Research, AgentIR brings substantial effectiveness and efficiency gains for agents, improving agent accuracy while reducing the number of problem-solving iterations.
+When employed for end-to-end Deep Research, AgentIR brings substantial effectiveness and efficiency gains for agents, improving agent accuracy while reducing the number of problem-solving iterations. Evaluation results on [BrowseComp-Plus](https://github.com/texttron/BrowseComp-Plus):
 
 <p align="center">
   <img src="assets/bcp.png" alt="BrowseComp-Plus">
 </p>
-> Evaluation results on [BrowseComp-Plus](https://github.com/texttron/BrowseComp-Plus).
 
 ## 🔍 Quick Usage
 
@@ -26,7 +25,6 @@ from transformers import AutoModel, AutoTokenizer
 
 MODEL = "Tevatron/AgentIR-4B"
 PREFIX = "Instruct: Given a user's reasoning followed by a web search query, retrieve relevant passages that answer the query while incorporating the user's reasoning\nQuery:"
-
 QUERY = """Reasoning: Search results show some relevant info about music and Grammy. We need a composer who won a Grammy, could be from Sweden/Finland/Austria (joined 1995)? The person is known for a certain creation that is a subgenre known for euphoric finale. Which subgenre has a euphoric finale? "Progressive house"? There's a structure: Build-up, breakdown, climax, drop, euphoria. They started creating this piece in a small studio's backroom.
 
 Query: "backroom" "studio" "early 2010s" "euphoric"
@@ -35,14 +33,6 @@ DOCS = [
     "35+ Studios With Upcoming Games to Watch: Turtle Rock Studios\n\nMaking its name on the classic Left 4 Dead series of games, Turtle Rock Studios is working on an all-new co-op game called Back 4 Blood that sees you fighting through a zombie apocalypse. Sound familiar? Announced in early 2019 and being published",
     "name: Otto Knows\nimage_upright: 1.25\nbirth_name: Otto Jettman\nbirth_date: 6 05 1989\nbirth_place: Stockholm, Sweden\ngenre: Electro house, house, progressive house\noccupation: DJ, music producer, remixer\n\nOtto Jettman (born 6 May 1989), better known by his stage name Otto Knows is a Swedish DJ, producer and remixer who has had a number of hits in Sweden, Belgium and the Netherlands"
 ]
-
-
-def pool_last_token(hidden, mask):
-    if mask[:, -1].sum() == mask.shape[0]:
-        return hidden[:, -1]
-    idx = mask.sum(dim=1) - 1
-    return hidden[torch.arange(hidden.shape[0], device=hidden.device), idx]
-
 
 def embed(texts, model, tokenizer, device, is_query=False):
     batch = tokenizer(
@@ -55,7 +45,7 @@ def embed(texts, model, tokenizer, device, is_query=False):
     batch = {k: v.to(device) for k, v in batch.items()}
     with torch.no_grad():
         hidden = model(**batch, return_dict=True).last_hidden_state
-        reps = pool_last_token(hidden, batch["attention_mask"])
+        reps = hidden[:, -1]
         return torch.nn.functional.normalize(reps, p=2, dim=-1).cpu()
 
 model = AutoModel.from_pretrained(MODEL, torch_dtype=torch.float16, device_map="auto")
@@ -70,7 +60,7 @@ for doc, vec in zip(DOCS, docs):
 
 ## 💾 Installation
 
-To reproduce the end-to-end Deep Research results and train AgentIR, you can install this project with [uv](https://docs.astral.sh/uv/getting-started/installation/).
+To reproduce the end-to-end Deep Research results and train AgentIR, you may install the project with [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 Installing `uv` itself:
 ```
