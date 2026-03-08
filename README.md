@@ -1,17 +1,9 @@
 # AgentIR
 
-  <a href="https://arxiv.org/abs/2603.04384">
-    <img src="https://img.shields.io/badge/Paper-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" alt="Paper">
-  </a>
-  <a href="https://huggingface.co/Tevatron/AgentIR-4B">
-    <img src="https://img.shields.io/badge/Model-FFD966?style=for-the-badge&logo=huggingface&logoColor=white" alt="Model">
-  </a>
-  <a href="https://huggingface.co/datasets/Tevatron/AgentIR-data">
-    <img src="https://img.shields.io/badge/Dataset-FFB7B2?style=for-the-badge&logo=huggingface&logoColor=white" alt="Dataset">
-  </a>
-  <a href="https://texttron.github.io/AgentIR/">
-  <img src="https://img.shields.io/badge/Project%20Page-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Project Page">
-</a>
+<p align="center">
+  <a href="https://arxiv.org/abs/2603.04384"><img src="https://img.shields.io/badge/Paper-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" alt="Paper"></a><a href="https://huggingface.co/Tevatron/AgentIR-4B"><img src="https://img.shields.io/badge/Model-FFD966?style=for-the-badge&logo=huggingface&logoColor=black" alt="Model"></a><a href="https://huggingface.co/datasets/Tevatron/AgentIR-data"><img src="https://img.shields.io/badge/Dataset-FFB7B2?style=for-the-badge&logo=huggingface&logoColor=black" alt="Dataset"></a><a href="https://texttron.github.io/AgentIR/"><img src="https://img.shields.io/badge/Project%20Page-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Project Page"></a>
+</p>
+
 
 <br>
 
