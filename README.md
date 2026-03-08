@@ -1,6 +1,20 @@
 # AgentIR
 
-| [📄Paper](https://arxiv.org/abs/2603.04384) | [🤗Model](https://huggingface.co/Tevatron/AgentIR-4B) | [🤗Data](https://huggingface.co/datasets/Tevatron/AgentIR-data) | [🏠Project Page](https://texttron.github.io/AgentIR/) |
+<p align="center">
+  <a href="https://arxiv.org/abs/2603.04384">
+    <img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat-square&logo=arxiv&logoColor=white" alt="Paper">
+  </a>
+  <a href="https://huggingface.co/Tevatron/AgentIR-4B">
+    <img src="https://img.shields.io/badge/Model-Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=000" alt="Model">
+  </a>
+  <a href="https://huggingface.co/datasets/Tevatron/AgentIR-data">
+    <img src="https://img.shields.io/badge/Data-Hugging%20Face-F9D649?style=flat-square&logo=huggingface&logoColor=000" alt="Data">
+  </a>
+  <a href="https://texttron.github.io/AgentIR/">
+    <img src="https://img.shields.io/badge/Project%20Page-AgentIR-0A7EA4?style=flat-square&logo=googlechrome&logoColor=white" alt="Project Page">
+  </a>
+</p>
+
 
 AgentIR is a retriever specialized for Deep Research agents. Unlike conventional retrievers that process queries without awareness of the agent, AgentIR explicitly incorporates the agent's reasoning trace by jointly embedding it with the query, leveraging the rich intent and contextual information expressed in the agent's reasoning.
 
