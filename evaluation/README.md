@@ -10,7 +10,7 @@ python prepare_data.py
 ```
 which downloads the benchmark into `data/` and `topics-qrels/`, with pre-built AgentIR-4B index in `indexes/`.
 
-> To encode the corpus yourself using AgentIR-4B, please see `scripts/embed_bcp.sh`
+> To encode the corpus yourself using AgentIR-4B, please see [scripts/embed_bcp.sh](scripts/embed_bcp.sh).
 
 ### Tongyi-DeepResearch
 
@@ -90,11 +90,11 @@ The index usage is similar to the instructions in [BrowseComp-Plus](https://gith
 
 ##### Dense Retrievers
 
-First host the `vllm` server for GPT-OSS as in instructions above. Then, you may see `scripts/run_oss_qwen3-embed-4b.sh`, which swaps the index parameters to use Qwen3-Embedding-4B. The usage for other agents, and other embedding indexes are similar.
+First host the `vllm` server for GPT-OSS as in instructions above. Then, you may see [scripts/run_oss_qwen3-embed-4b.sh](scripts/run_oss_qwen3-embed-4b.sh), which swaps the index parameters to use Qwen3-Embedding-4B. The usage for other agents, and other embedding indexes are similar.
 
 ##### BM25
 
-You may see `scripts/run_oss_bm25.sh` for using the BM25 index. Note that to run the BM25 searcher, you need to first `uv sync --extra bm25` to install `pyserini`, and then install java 21:
+You may see [scripts/run_oss_bm25.sh](scripts/run_oss_bm25.sh) for using the BM25 index. Note that to run the BM25 searcher, you need to first `uv sync --extra bm25` to install `pyserini`, and then install java 21:
 ```
 conda install -c conda-forge openjdk=21
 ```
