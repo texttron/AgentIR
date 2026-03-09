@@ -48,15 +48,21 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="javascript:void(0);" class="external-link button is-normal is-rounded is-dark">
+                                    <a href="https://github.com/texttron/AgentIR/tree/main" target="_blank" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon"><i class="fab fa-github"></i></span>
-                                        <span>Coming Soon (By End of Day!)</span>
+                                        <span>Code</span>
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="javascript:void(0);" class="external-link button is-normal is-rounded is-dark">
+                                    <a href="https://huggingface.co/Tevatron/AgentIR-4B" target="_blank" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">🤗</span>
-                                        <span>Coming Soon (By End of Week!)</span>
+                                        <span>Model</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://huggingface.co/datasets/Tevatron/AgentIR-data" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">🤗</span>
+                                        <span>Data</span>
                                     </a>
                                 </span>
                             </div>
@@ -191,7 +197,7 @@
 
                         <h3 class="title is-4">Generating Supervision</h3>
                         <p>
-                            For every sub-query, we gather candidate documents using a standard retriever, followed by an oracle reranking procedure. The top-reranked document becomes positive supervision, and the bottom ranked become hard negatives.
+                            For every sub-query during the rollout, we gather candidate documents using a standard retriever, followed by an oracle reranking procedure. The top-reranked document becomes positive supervision, and the bottom ranked become hard negatives.
                         </p>
 
                         <div class="has-text-centered" style="margin-top: 2rem; margin-bottom: 2rem;">
