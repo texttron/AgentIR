@@ -25,7 +25,7 @@ done
 
 python search_agent/oss_client.py \
     --model openai/gpt-oss-120b \
-    --output-dir runs/qwen3-4/oss_120b \
+    --output-dir runs/bm25/oss_120b \
     --searcher-type bm25 \
     --index-path "indexes/bm25" \
     --model-url http://localhost:$PORT/v1 \
