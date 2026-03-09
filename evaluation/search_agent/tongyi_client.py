@@ -87,7 +87,8 @@ def process_single_query(query: str, agent: MultiTurnReactAgent, args, output_di
     
     task_data = {
         "item": {"question": query, "answer": ""},
-        "planning_port": args.port
+        "planning_port": args.port,
+        "query_id": None
     }
     
     try:
